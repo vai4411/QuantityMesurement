@@ -26,4 +26,11 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(one,two));
     }
+
+    @Test
+    public void givenFeetAndFeet_WhenSameObject_ShouldReturnTrue() {
+        Feet one = new Feet(0);
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(one,one));
+    }
 }
