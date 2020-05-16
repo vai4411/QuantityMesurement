@@ -9,8 +9,12 @@ public class Units {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() == o.getClass())
+            return getClass() == o.getClass();
         Units units = (Units) o;
         return length == units.length;
     }
