@@ -41,4 +41,10 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(one,two));
     }
+
+    @Test
+    public void givenFeetAndFeet_WhenDifferentLength_ShouldReturnFalse() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertFalse(quantity.equals(new Feet(0),new Feet(10)));
+    }
 }

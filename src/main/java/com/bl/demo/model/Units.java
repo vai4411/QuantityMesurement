@@ -11,10 +11,8 @@ public class Units {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (o == null)
+        if (o == null || getClass() != o.getClass())
             return false;
-        if (getClass() == o.getClass())
-            return getClass() == o.getClass();
         Units units = (Units) o;
         return length == units.length;
     }
