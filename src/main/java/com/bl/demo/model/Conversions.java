@@ -9,4 +9,8 @@ public class Conversions {
     public static double yardToFeet(double length) {
         return length * 3;
     }
+
+    public static double cmToFeet(double length) {
+        return length * 2 / 5;
+    }
 }

@@ -1,6 +1,7 @@
 package com.bl.demo;
 
 import com.bl.demo.exception.QuantityMeasurementException;
+import com.bl.demo.model.CM;
 import com.bl.demo.model.Feet;
 import com.bl.demo.model.Inch;
 import com.bl.demo.model.Yard;
@@ -9,6 +10,7 @@ import org.junit.Test;
 
 public class QuantityMeasurementTest {
 
+    //UC-1
     //TC-1.1
     @Test
     public void givenFeetAndFeet_WhenZero_ShouldReturnTrue() {
@@ -56,6 +58,7 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(quantity.equals(new Feet(0),new Feet(10)));
     }
 
+    //UC-2
     //TC-1.6
     @Test
     public void givenInchAndInch_WhenOneIsNull_ShouldReturnFalse() {
@@ -176,5 +179,12 @@ public class QuantityMeasurementTest {
     public void givenYardAndFeet_WhenOneYardAndThreeFeet_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Yard(1),new Feet(3)));
+    }
+
+    //UC-3
+    @Test
+    public void givenInchAndCM_WhenTwoInchAndFiveCM_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Inch(2),new CM(5)));
     }
 }
