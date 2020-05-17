@@ -11,7 +11,7 @@ public class Units {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (o == null || getClass() != o.getClass())
+        if (o == null)
             return false;
         Units units = (Units) o;
         return length == units.length;

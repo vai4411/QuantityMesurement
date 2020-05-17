@@ -86,4 +86,10 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertFalse(quantity.equals(one,two));
     }
+
+    @Test
+    public void givenFeetAndInch_WhenZero_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Feet(0),new Inch(0)));
+    }
 }
