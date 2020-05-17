@@ -170,4 +170,11 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Inch(36),new Yard(1)));
     }
+
+    //TC-1.19
+    @Test
+    public void givenYardAndFeet_WhenOneYardAndThreeFeet_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Yard(1),new Feet(3)));
+    }
 }
