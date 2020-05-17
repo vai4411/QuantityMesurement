@@ -100,7 +100,13 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenFeetAndInch_WhenOneFeetAndTwelve_ShouldReturnTrue() {
+    public void givenFeetAndInch_WhenOneFeetAndTwelveInch_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Feet(1),new Inch(12)));
+    }
+
+    @Test
+    public void givenInchAndFeet_WhenTwelveInchAndOneFeet_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Feet(1),new Inch(12)));
     }
