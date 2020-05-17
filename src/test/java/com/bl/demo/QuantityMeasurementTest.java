@@ -134,4 +134,10 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertFalse(quantity.equals(new Feet(1),new Yard(1)));
     }
+
+    @Test
+    public void givenInchAndYard_WhenOne_ShouldReturnFalse() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertFalse(quantity.equals(new Inch(1),new Yard(1)));
+    }
 }
