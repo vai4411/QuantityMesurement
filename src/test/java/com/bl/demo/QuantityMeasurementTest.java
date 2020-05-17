@@ -55,4 +55,12 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertFalse(quantity.equals(inch,new Inch(0)));
     }
+
+    @Test
+    public void givenInchAndInch_WhenSameType_ShouldReturnTrue() {
+        Inch one = new Inch(0);
+        Inch two = new Inch(0);
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(one,two));
+    }
 }
