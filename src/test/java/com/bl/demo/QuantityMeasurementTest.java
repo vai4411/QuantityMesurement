@@ -163,4 +163,11 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Yard(1),new Inch(36)));
     }
+
+    //TC-1.18
+    @Test
+    public void givenInchAndYard_WhenThirtySixInchAndOneYard_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Inch(36),new Yard(1)));
+    }
 }
