@@ -78,4 +78,12 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(one,two));
     }
+
+    @Test
+    public void givenInchAndInch_WhenDifferentLength_ShouldReturnFalse() {
+        Inch one = new Inch(5);
+        Inch two = new Inch(10);
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertFalse(quantity.equals(one,two));
+    }
 }
