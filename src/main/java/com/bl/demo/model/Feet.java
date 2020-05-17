@@ -2,7 +2,7 @@ package com.bl.demo.model;
 
 public class Feet extends Units {
 
-    public Feet(int length) {
+    public Feet(double length) {
         super(length);
     }
 }

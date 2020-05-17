@@ -1,9 +1,9 @@
 package com.bl.demo.model;
 
 public class Units {
-    private int length;
+    private double length;
 
-    public Units(int length) {
+    public Units(double length) {
         this.length = length;
     }
 

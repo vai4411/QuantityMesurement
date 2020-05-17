@@ -1,6 +1,7 @@
 package com.bl.demo;
 
 import com.bl.demo.model.Feet;
+import com.bl.demo.model.Inch;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -46,5 +47,12 @@ public class QuantityMeasurementTest {
     public void givenFeetAndFeet_WhenDifferentLength_ShouldReturnFalse() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertFalse(quantity.equals(new Feet(0),new Feet(10)));
+    }
+
+    @Test
+    public void givenInchAndInch_WhenOneIsNull_ShouldReturnFalse() {
+        Inch inch = null;
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertFalse(quantity.equals(inch,new Inch(0)));
     }
 }
