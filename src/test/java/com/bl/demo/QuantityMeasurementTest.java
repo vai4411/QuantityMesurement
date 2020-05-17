@@ -30,9 +30,9 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenFeetAndFeet_WhenSameObject_ShouldReturnTrue() {
-        Feet one = new Feet(0);
+        Feet feet = new Feet(0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(one,one));
+        Assert.assertTrue(quantity.equals(feet,feet));
     }
 
     @Test
@@ -62,5 +62,12 @@ public class QuantityMeasurementTest {
         Inch two = new Inch(0);
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(one,two));
+    }
+
+    @Test
+    public void givenInchAndInch_WhenSameObject_ShouldReturnTrue() {
+        Inch inch = new Inch(0);
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(inch,inch));
     }
 }
