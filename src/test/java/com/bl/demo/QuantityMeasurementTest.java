@@ -1,5 +1,6 @@
 package com.bl.demo;
 
+import com.bl.demo.exception.QuantityMeasurementException;
 import com.bl.demo.model.Feet;
 import com.bl.demo.model.Inch;
 import org.junit.Assert;
@@ -109,5 +110,15 @@ public class QuantityMeasurementTest {
     public void givenInchAndFeet_WhenTwelveInchAndOneFeet_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Feet(1),new Inch(12)));
+    }
+
+    @Test
+    public void givenInchAndFeet_WhenNegative_ShouldThrowException() {
+        try {
+            QuantityMeasurement quantity = new QuantityMeasurement();
+            boolean result = quantity.equals(new Feet(-1),new Inch(-1));
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals("Length Should Be Positive",e.getMessage());
+        }
     }
 }

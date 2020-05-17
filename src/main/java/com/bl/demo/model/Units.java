@@ -1,5 +1,7 @@
 package com.bl.demo.model;
 
+import com.bl.demo.exception.QuantityMeasurementException;
+
 public class Units {
     private double length;
 
@@ -14,6 +16,8 @@ public class Units {
         if (o == null)
             return false;
         Units units = (Units) o;
+        if (units.length < 0)
+            throw new QuantityMeasurementException("Length Should Be Positive");
         return length == units.length;
     }
 }
