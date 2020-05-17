@@ -3,6 +3,7 @@ package com.bl.demo;
 import com.bl.demo.exception.QuantityMeasurementException;
 import com.bl.demo.model.Feet;
 import com.bl.demo.model.Inch;
+import com.bl.demo.model.Yard;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -120,5 +121,11 @@ public class QuantityMeasurementTest {
         } catch (QuantityMeasurementException e) {
             Assert.assertEquals("Length Should Be Positive",e.getMessage());
         }
+    }
+
+    @Test
+    public void givenFeetAndYard_WhenThreeFeetAndOneYard_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Feet(3),new Yard(1)));
     }
 }
