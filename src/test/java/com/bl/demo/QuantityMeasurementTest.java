@@ -70,4 +70,12 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(inch,inch));
     }
+
+    @Test
+    public void givenInchAndInch_WhenSameLength_ShouldReturnTrue() {
+        Inch one = new Inch(10);
+        Inch two = new Inch(10);
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(one,two));
+    }
 }
