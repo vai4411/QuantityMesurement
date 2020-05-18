@@ -10,7 +10,7 @@ public class Conversions {
         return length * 3;
     }
 
-    public static double cmToFeet(double length) {
+    public static double cmToInch(double length) {
         return length * 2 / 5;
     }
 }
