@@ -220,4 +220,10 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Gallon(1),new Litre(3.78)));
     }
+
+    @Test
+    public void givenLitreAndML_WhenOneLitreCompareWithThousandML_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Litre(1),new ML(1000)));
+    }
 }
