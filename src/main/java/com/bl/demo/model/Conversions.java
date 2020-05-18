@@ -14,7 +14,11 @@ public class Conversions {
         return length * 2 / 5;
     }
 
-    public static double gallonToLitre(double quantity) {
-        return quantity * 3.78;
+    public static double gallonToLitre(double volume) {
+        return volume * 3.78;
+    }
+
+    public static double mlToLitre(double volume) {
+        return volume / 1000;
     }
 }
