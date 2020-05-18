@@ -248,4 +248,10 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new KiloGrams(1),new Grams(1000)));
     }
+
+    @Test
+    public void givenTonneAndKG_WhenOneTonneCompareWithThousandKG_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Tonne(1),new KiloGrams(1000)));
+    }
 }

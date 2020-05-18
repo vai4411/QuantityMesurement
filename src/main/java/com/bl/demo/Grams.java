@@ -9,7 +9,7 @@ import com.bl.demo.model.QuantityUnits;
 
 public class Grams extends QuantityUnits {
     /**+
-     * @purpose : To take weight input in grams(double) format then convert it into inch(double) format and pass it to parent class
+     * @purpose : To take weight input in grams(double) format and pass it to parent class
      * @param : weight
      */
     public Grams(double weight) {

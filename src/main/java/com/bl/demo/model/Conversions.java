@@ -60,4 +60,13 @@ public class Conversions {
     public static double kilogramToGram(double weight) {
         return weight * 1000;
     }
+
+    /**+
+     * @purpose : To take input in tonne(double) and convert it into kilograms(double)
+     * @param : weight
+     * @return : Give the result in kilograms(double) format
+     */
+    public static double tonneToKilogram(double weight) {
+        return weight * 1000;
+    }
 }
