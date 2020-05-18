@@ -236,7 +236,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenConversionTest_WhenOneLitreAndThousandMLAdditionCompareWithTwoML_ShouldReturnTrue() {
+    public void givenConversionTest_WhenOneLitreAndThousandMLAdditionCompareWithTwoLitre_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         double result = quantity.addLengthUnits(new Litre(1),new MilliLitre(1000));
         Assert.assertTrue(quantity.equals(new Litre(2),new Litre(result)));
