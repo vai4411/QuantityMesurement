@@ -234,4 +234,11 @@ public class QuantityMeasurementTest {
         double result = quantity.addLengthUnits(new Gallon(1),new Litre(3.78));
         Assert.assertTrue(quantity.equals(new Litre(7.56),new Litre(result)));
     }
+
+    @Test
+    public void givenConversionTest_WhenOneLitreAndThousandMLAdditionCompareWithTwoML_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        double result = quantity.addLengthUnits(new Litre(1),new MilliLitre(1000));
+        Assert.assertTrue(quantity.equals(new Litre(2),new Litre(result)));
+    }
 }
