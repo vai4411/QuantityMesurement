@@ -182,7 +182,7 @@ public class QuantityMeasurementTest {
     @Test
     public void givenInchAndCM_WhenTwoInchCompareWithFiveCM_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Inch(2),new CM(5)));
+        Assert.assertTrue(quantity.equals(new Inch(2),new CentiMeter(5)));
     }
 
     //UC-4
@@ -210,7 +210,7 @@ public class QuantityMeasurementTest {
     @Test
     public void givenConversionTest_WhenTwoInchAndTwoPointFiveCMAdditionCompareWithThreeInch_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Inch(2),new CM(2.5));
+        double result = quantity.addLengthUnits(new Inch(2),new CentiMeter(2.5));
         Assert.assertTrue(quantity.equals(new Inch(3),new Inch(result)));
     }
 
@@ -224,6 +224,6 @@ public class QuantityMeasurementTest {
     @Test
     public void givenLitreAndML_WhenOneLitreCompareWithThousandML_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Litre(1),new ML(1000)));
+        Assert.assertTrue(quantity.equals(new Litre(1),new MilliLitre(1000)));
     }
 }
