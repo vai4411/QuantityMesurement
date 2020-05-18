@@ -132,7 +132,7 @@ public class QuantityMeasurementTest {
             QuantityMeasurement quantity = new QuantityMeasurement();
             boolean result = quantity.equals(new Feet(-1),new Inch(-1));
         } catch (QuantityMeasurementException e) {
-            Assert.assertEquals("Length Should Be Positive",e.getMessage());
+            Assert.assertEquals("Quantity Should Be Positive",e.getMessage());
         }
     }
 
@@ -253,5 +253,12 @@ public class QuantityMeasurementTest {
     public void givenTonneAndKG_WhenOneTonneCompareWithThousandKG_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Tonne(1),new KiloGrams(1000)));
+    }
+
+    @Test
+    public void givenConversionTest_WhenOneTonneAndThousandGMAdditionCompareWithOneThousandOneKG_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        double result = quantity.addLengthUnits(new Tonne(1),new Grams(1000));
+        Assert.assertTrue(quantity.equals(new KiloGrams(1001),new KiloGrams(result)));
     }
 }

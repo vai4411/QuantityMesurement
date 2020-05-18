@@ -57,8 +57,8 @@ public class Conversions {
      * @param : weight
      * @return : Give the result in grams(double) format
      */
-    public static double kilogramToGram(double weight) {
-        return weight * 1000;
+    public static double gramToKilogram(double weight) {
+        return weight / 1000;
     }
 
     /**+
