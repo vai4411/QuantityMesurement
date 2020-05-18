@@ -199,4 +199,11 @@ public class QuantityMeasurementTest {
         double result = quantity.addLengthUnits(new Feet(1),new Inch(2));
         Assert.assertTrue(quantity.equals(new Inch(14),new Inch(result)));
     }
+
+    @Test
+    public void givenConversionTest_WhenOneFeetAndOneFeetAdditionCompareWithTwentyFourInch_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        double result = quantity.addLengthUnits(new Feet(1),new Feet(1));
+        Assert.assertTrue(quantity.equals(new Inch(24),new Inch(result)));
+    }
 }
