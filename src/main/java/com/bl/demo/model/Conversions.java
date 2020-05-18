@@ -13,4 +13,8 @@ public class Conversions {
     public static double cmToInch(double length) {
         return length * 2 / 5;
     }
+
+    public static double gallonToLitre(double quantity) {
+        return quantity * 3.78;
+    }
 }
