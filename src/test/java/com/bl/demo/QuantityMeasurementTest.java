@@ -213,4 +213,11 @@ public class QuantityMeasurementTest {
         double result = quantity.addLengthUnits(new Inch(2),new CM(2.5));
         Assert.assertTrue(quantity.equals(new Inch(3),new Inch(result)));
     }
+
+    //UC-5
+    @Test
+    public void givenGallonAndLitre_WhenOneGallonCompareWithThreePointSeventyEightLiter_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Gallon(1),new Litre(3.78)));
+    }
 }
