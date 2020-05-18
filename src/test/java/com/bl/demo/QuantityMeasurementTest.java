@@ -1,10 +1,7 @@
 package com.bl.demo;
 
 import com.bl.demo.exception.QuantityMeasurementException;
-import com.bl.demo.model.CM;
-import com.bl.demo.model.Feet;
-import com.bl.demo.model.Inch;
-import com.bl.demo.model.Yard;
+import com.bl.demo.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -117,14 +114,14 @@ public class QuantityMeasurementTest {
 
     //TC-1.12
     @Test
-    public void givenFeetAndInch_WhenOneFeetAndTwelveInch_ShouldReturnTrue() {
+    public void givenFeetAndInch_WhenOneFeetCompareWithTwelveInch_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Feet(1),new Inch(12)));
     }
 
     //TC-1.13
     @Test
-    public void givenInchAndFeet_WhenTwelveInchAndOneFeet_ShouldReturnTrue() {
+    public void givenInchAndFeet_WhenTwelveInchCompareWithOneFeet_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Feet(1),new Inch(12)));
     }
@@ -141,7 +138,7 @@ public class QuantityMeasurementTest {
 
     //TC-1.14
     @Test
-    public void givenFeetAndYard_WhenThreeFeetAndOneYard_ShouldReturnTrue() {
+    public void givenFeetAndYard_WhenThreeFeetCompareWithOneYard_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Feet(3),new Yard(1)));
     }
@@ -162,29 +159,37 @@ public class QuantityMeasurementTest {
 
     //TC-1.17
     @Test
-    public void givenYardAndInch_WhenOneYardAndThirtySixInch_ShouldReturnTrue() {
+    public void givenYardAndInch_WhenOneYardCompareWithThirtySixInch_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Yard(1),new Inch(36)));
     }
 
     //TC-1.18
     @Test
-    public void givenInchAndYard_WhenThirtySixInchAndOneYard_ShouldReturnTrue() {
+    public void givenInchAndYard_WhenThirtySixInchCompareWithOneYard_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Inch(36),new Yard(1)));
     }
 
     //TC-1.19
     @Test
-    public void givenYardAndFeet_WhenOneYardAndThreeFeet_ShouldReturnTrue() {
+    public void givenYardAndFeet_WhenOneYardCompareWithThreeFeet_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Yard(1),new Feet(3)));
     }
 
     //UC-3
     @Test
-    public void givenInchAndCM_WhenTwoInchAndFiveCM_ShouldReturnTrue() {
+    public void givenInchAndCM_WhenTwoInchCompareWithFiveCM_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
         Assert.assertTrue(quantity.equals(new Inch(2),new CM(5)));
+    }
+
+    //UC-4
+    @Test
+    public void givenConversionTest_WhenTwoInchAndTwoInchAdditionCompareWithFourInch_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        double result = quantity.addLengthUnits(new Inch(2),new Inch(2));
+        Assert.assertTrue(quantity.equals(new Inch(4),new Inch(result)));
     }
 }
