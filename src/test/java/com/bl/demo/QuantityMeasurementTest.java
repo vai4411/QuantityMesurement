@@ -261,4 +261,11 @@ public class QuantityMeasurementTest {
         double result = quantity.addLengthUnits(new Tonne(1),new Grams(1000));
         Assert.assertTrue(quantity.equals(new KiloGrams(1001),new KiloGrams(result)));
     }
+
+    //UC-8
+    @Test
+    public void givenFahrenheitAndCelsius_WhenTwoHundredFahrenheitCompareWithHundredCelsius_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new Fahrenheit(212),new Celsius(100)));
+    }
 }

@@ -69,4 +69,13 @@ public class Conversions {
     public static double tonneToKilogram(double weight) {
         return weight * 1000;
     }
+
+    /**+
+     * @purpose : To take input in fahrenheit(double) and convert it into celsius(double)
+     * @param : temperature
+     * @return : Give the result in celsius(double) format
+     */
+    public static double fahrenheitToCelsius(double temperature) {
+        return (temperature - 32) * 5 / 9;
+    }
 }
