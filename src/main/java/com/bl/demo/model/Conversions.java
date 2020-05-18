@@ -51,4 +51,13 @@ public class Conversions {
     public static double millilitreToLitre(double volume) {
         return volume / 1000;
     }
+
+    /**+
+     * @purpose : To take input in kilograms(double) and convert it into grams(double)
+     * @param : weight
+     * @return : Give the result in grams(double) format
+     */
+    public static double kilogramToGram(double weight) {
+        return weight * 1000;
+    }
 }

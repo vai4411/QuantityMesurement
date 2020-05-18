@@ -241,4 +241,11 @@ public class QuantityMeasurementTest {
         double result = quantity.addLengthUnits(new Litre(1),new MilliLitre(1000));
         Assert.assertTrue(quantity.equals(new Litre(2),new Litre(result)));
     }
+
+    //UC-7
+    @Test
+    public void givenKGAndGM_WhenOneKGCompareWithOneGM_ShouldReturnTrue() {
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertTrue(quantity.equals(new KiloGrams(1),new Grams(1000)));
+    }
 }
