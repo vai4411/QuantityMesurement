@@ -15,8 +15,12 @@ public class QuantityMeasurement {
      * @param : unit2
      * @return : Give addition of units in double format
      */
-    public static double addLengthUnits(QuantityUnits unit1, QuantityUnits unit2) {
-        return unit1.addLength(unit2);
+    public static double addQuantityUnits(QuantityUnits unit1, QuantityUnits unit2) {
+        return unit1.addQuantity(unit2);
+    }
+
+    public static double temperatureConversion(double temperature) {
+        return (temperature * 9 / 5) + 32;
     }
 
     /**+

@@ -1,7 +1,8 @@
 package com.bl.demo;
 
 import com.bl.demo.exception.QuantityMeasurementException;
-import com.bl.demo.model.*;
+import com.bl.demo.model.QuantityUnits;
+import com.bl.demo.enums.UnitConversion;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,260 +13,311 @@ public class QuantityMeasurementTest {
     @Test
     public void givenFeetAndFeet_WhenZero_ShouldReturnTrue() {
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Feet(0),new Feet(0)));
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //TC-1.2
     @Test
     public void givenFeetAndFeet_WhenOneIsNull_ShouldReturnFalse() {
-        Feet feet = null;
+        QuantityUnits unit1 = null;
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertFalse(quantity.equals(feet,new Feet(0)));
+        Assert.assertFalse(quantity.equals(unit1,unit2));
     }
 
     //TC-1.3
     @Test
     public void givenFeetAndFeet_WhenSameType_ShouldReturnTrue() {
-        Feet one = new Feet(0);
-        Feet two = new Feet(0);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(one,two));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //TC-1.4
     @Test
     public void givenFeetAndFeet_WhenSameObject_ShouldReturnTrue() {
-        Feet feet = new Feet(0);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(feet,feet));
+        Assert.assertTrue(quantity.equals(unit1,unit1));
     }
 
     //TC-1.5
     @Test
     public void givenFeetAndFeet_WhenSameLength_ShouldReturnTrue() {
-        Feet one = new Feet(10);
-        Feet two = new Feet(10);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),10);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Feet.getUnit(),10);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(one,two));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     @Test
     public void givenFeetAndFeet_WhenDifferentLength_ShouldReturnFalse() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Feet.getUnit(),10);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertFalse(quantity.equals(new Feet(0),new Feet(10)));
+        Assert.assertFalse(quantity.equals(unit1,unit2));
     }
 
     //UC-2
     //TC-1.6
     @Test
     public void givenInchAndInch_WhenOneIsNull_ShouldReturnFalse() {
-        Inch inch = null;
+        QuantityUnits unit1 = null;
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertFalse(quantity.equals(inch,new Inch(0)));
+        Assert.assertFalse(quantity.equals(unit1,unit2));
     }
 
     //TC-1.7
     @Test
     public void givenInchAndInch_WhenSameType_ShouldReturnTrue() {
-        Inch one = new Inch(0);
-        Inch two = new Inch(0);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),0);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(one,two));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //TC-1.8
     @Test
     public void givenInchAndInch_WhenSameObject_ShouldReturnTrue() {
-        Inch inch = new Inch(0);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(inch,inch));
+        Assert.assertTrue(quantity.equals(unit1,unit1));
     }
 
     //TC-1.9
     @Test
     public void givenInchAndInch_WhenSameLength_ShouldReturnTrue() {
-        Inch one = new Inch(10);
-        Inch two = new Inch(10);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),10);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),10);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(one,two));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     @Test
     public void givenInchAndInch_WhenDifferentLength_ShouldReturnFalse() {
-        Inch one = new Inch(5);
-        Inch two = new Inch(10);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),5);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),10);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertFalse(quantity.equals(one,two));
+        Assert.assertFalse(quantity.equals(unit1,unit2));
     }
 
     //TC-1.10
     @Test
     public void givenFeetAndInch_WhenZero_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),0);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),0);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Feet(0),new Inch(0)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //TC-1.11
     @Test
     public void givenFeetAndInch_WhenOne_ShouldReturnFalse() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),1);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertFalse(quantity.equals(new Feet(1),new Inch(1)));
+        Assert.assertFalse(quantity.equals(unit1,unit2));
     }
 
     //TC-1.12
     @Test
     public void givenFeetAndInch_WhenOneFeetCompareWithTwelveInch_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),12);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Feet(1),new Inch(12)));
-    }
-
-    //TC-1.13
-    @Test
-    public void givenInchAndFeet_WhenTwelveInchCompareWithOneFeet_ShouldReturnTrue() {
-        QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Feet(1),new Inch(12)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     @Test
     public void givenInchAndFeet_WhenNegative_ShouldThrowException() {
         try {
             QuantityMeasurement quantity = new QuantityMeasurement();
-            boolean result = quantity.equals(new Feet(-1),new Inch(-1));
+            QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),-1);
+            QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),-1);
+            boolean result = quantity.equals(unit1,unit2);
         } catch (QuantityMeasurementException e) {
             Assert.assertEquals("Quantity Should Be Positive",e.getMessage());
         }
     }
 
-    //TC-1.14
+    //TC-1.13
     @Test
     public void givenFeetAndYard_WhenThreeFeetCompareWithOneYard_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),3);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Feet(3),new Yard(1)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
+    }
+
+    //TC-1.14
+    @Test
+    public void givenFeetAndYard_WhenOne_ShouldReturnFalse() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
+        QuantityMeasurement quantity = new QuantityMeasurement();
+        Assert.assertFalse(quantity.equals(unit1,unit2));
     }
 
     //TC-1.15
     @Test
-    public void givenFeetAndYard_WhenOne_ShouldReturnFalse() {
+    public void givenInchAndYard_WhenOne_ShouldReturnFalse() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertFalse(quantity.equals(new Feet(1),new Yard(1)));
+        Assert.assertFalse(quantity.equals(unit1,unit2));
     }
 
     //TC-1.16
     @Test
-    public void givenInchAndYard_WhenOne_ShouldReturnFalse() {
+    public void givenYardAndInch_WhenOneYardCompareWithThirtySixInch_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),36);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertFalse(quantity.equals(new Inch(1),new Yard(1)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //TC-1.17
     @Test
-    public void givenYardAndInch_WhenOneYardCompareWithThirtySixInch_ShouldReturnTrue() {
-        QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Yard(1),new Inch(36)));
-    }
-
-    //TC-1.18
-    @Test
-    public void givenInchAndYard_WhenThirtySixInchCompareWithOneYard_ShouldReturnTrue() {
-        QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Inch(36),new Yard(1)));
-    }
-
-    //TC-1.19
-    @Test
     public void givenYardAndFeet_WhenOneYardCompareWithThreeFeet_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),3);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Yard(1),new Feet(3)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //UC-3
     @Test
     public void givenInchAndCM_WhenTwoInchCompareWithFiveCM_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Centimeter.getUnit(),5);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Inch(2),new CentiMeter(5)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //UC-4
     @Test
     public void givenConversionTest_WhenTwoInchAndTwoInchAdditionCompareWithFourInch_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
+        QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),4);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Inch(2),new Inch(2));
-        Assert.assertTrue(quantity.equals(new Inch(4),new Inch(result)));
+        double result = quantity.addQuantityUnits(unit1,unit2);
+        QuantityUnits unit4 = new QuantityUnits(UnitConversion.Inch.getUnit(),result);
+        Assert.assertTrue(quantity.equals(unit3,unit4));
     }
 
     @Test
     public void givenConversionTest_WhenOneFeetAndTwoInchAdditionCompareWithFourteenInch_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),1);
+        QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),13);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Feet(1),new Inch(1));
-        Assert.assertTrue(quantity.equals(new Inch(13),new Inch(result)));
+        double result = quantity.addQuantityUnits(unit1,unit2);
+        QuantityUnits unit4 = new QuantityUnits(UnitConversion.Inch.getUnit(),result);
+        Assert.assertTrue(quantity.equals(unit3,unit4));
     }
 
     @Test
     public void givenConversionTest_WhenOneFeetAndOneFeetAdditionCompareWithTwentyFourInch_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
+        QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),24);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Feet(1),new Feet(1));
-        Assert.assertTrue(quantity.equals(new Inch(24),new Inch(result)));
+        double result = quantity.addQuantityUnits(unit1,unit2);
+        QuantityUnits unit4 = new QuantityUnits(UnitConversion.Inch.getUnit(),result);
+        Assert.assertTrue(quantity.equals(unit3,unit4));
     }
 
     @Test
     public void givenConversionTest_WhenTwoInchAndTwoPointFiveCMAdditionCompareWithThreeInch_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Centimeter.getUnit(),2.5);
+        QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),3);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Inch(2),new CentiMeter(2.5));
-        Assert.assertTrue(quantity.equals(new Inch(3),new Inch(result)));
+        double result = quantity.addQuantityUnits(unit1,unit2);
+        QuantityUnits unit4 = new QuantityUnits(UnitConversion.Inch.getUnit(),result);
+        Assert.assertTrue(quantity.equals(unit3,unit4));
     }
 
     //UC-5
     @Test
     public void givenGallonAndLitre_WhenOneGallonCompareWithThreePointSeventyEightLiter_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Gallon.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Litre.getUnit(),3.78);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Gallon(1),new Litre(3.78)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     @Test
     public void givenLitreAndML_WhenOneLitreCompareWithThousandML_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Litre.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Millilitre.getUnit(),1000);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Litre(1),new MilliLitre(1000)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     //UC-6
     @Test
     public void givenConversionTest_WhenOneGallonAndThreePointSeventyEightLiterAdditionCompareWithSevenPointFiftySix_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Gallon.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Litre.getUnit(),3.78);
+        QuantityUnits unit3 = new QuantityUnits(UnitConversion.Litre.getUnit(),7.56);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Gallon(1),new Litre(3.78));
-        Assert.assertTrue(quantity.equals(new Litre(7.56),new Litre(result)));
+        double result = quantity.addQuantityUnits(unit1,unit2);
+        QuantityUnits unit4 = new QuantityUnits(UnitConversion.Litre.getUnit(),result);
+        Assert.assertTrue(quantity.equals(unit3,unit4));
     }
 
     @Test
     public void givenConversionTest_WhenOneLitreAndThousandMLAdditionCompareWithTwoML_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Litre.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Millilitre.getUnit(),1000);
+        QuantityUnits unit3 = new QuantityUnits(UnitConversion.Litre.getUnit(),2);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Litre(1),new MilliLitre(1000));
-        Assert.assertTrue(quantity.equals(new Litre(2),new Litre(result)));
+        double result = quantity.addQuantityUnits(unit1,unit2);
+        QuantityUnits unit4 = new QuantityUnits(UnitConversion.Litre.getUnit(),result);
+        Assert.assertTrue(quantity.equals(unit3,unit4));
     }
 
     //UC-7
     @Test
     public void givenKGAndGM_WhenOneKGCompareWithOneGM_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Kilogram.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Gram.getUnit(),1000);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new KiloGrams(1),new Grams(1000)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     @Test
     public void givenTonneAndKG_WhenOneTonneCompareWithThousandKG_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Tonne.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Kilogram.getUnit(),1000);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Tonne(1),new KiloGrams(1000)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 
     @Test
     public void givenConversionTest_WhenOneTonneAndThousandGMAdditionCompareWithOneThousandOneKG_ShouldReturnTrue() {
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Tonne.getUnit(),1);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Gram.getUnit(),1000);
+        QuantityUnits unit3 = new QuantityUnits(UnitConversion.Kilogram.getUnit(),1001);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        double result = quantity.addLengthUnits(new Tonne(1),new Grams(1000));
-        Assert.assertTrue(quantity.equals(new KiloGrams(1001),new KiloGrams(result)));
+        double result = quantity.addQuantityUnits(unit1,unit2);
+        QuantityUnits unit4 = new QuantityUnits(UnitConversion.Kilogram.getUnit(),result);
+        Assert.assertTrue(quantity.equals(unit3,unit4));
     }
 
     //UC-8
     @Test
     public void givenFahrenheitAndCelsius_WhenTwoHundredFahrenheitCompareWithHundredCelsius_ShouldReturnTrue() {
+        double temperature = QuantityMeasurement.temperatureConversion(100);
+        QuantityUnits unit1 = new QuantityUnits(UnitConversion.Celsius.getUnit(),temperature);
+        QuantityUnits unit2 = new QuantityUnits(UnitConversion.Fahrenheit.getUnit(), 212);
         QuantityMeasurement quantity = new QuantityMeasurement();
-        Assert.assertTrue(quantity.equals(new Fahrenheit(212),new Celsius(100)));
+        Assert.assertTrue(quantity.equals(unit1,unit2));
     }
 }
