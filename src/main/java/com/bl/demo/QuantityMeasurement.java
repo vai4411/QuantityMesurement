@@ -5,6 +5,7 @@
  * *******************************************************/
 package com.bl.demo;
 
+import com.bl.demo.enums.UnitConversion;
 import com.bl.demo.model.QuantityUnits;
 
 public class QuantityMeasurement {
@@ -19,8 +20,10 @@ public class QuantityMeasurement {
         return unit1.addQuantity(unit2);
     }
 
-    public static double temperatureConversion(double temperature) {
-        return (temperature * 9 / 5) + 32;
+    public static double temperatureConversion(double QuantityUnit, double temperature) {
+        if (QuantityUnit == UnitConversion.Fahrenheit.getUnit())
+            return (temperature * 9/5) + 32;
+        return (temperature - 32) * 5/9;
     }
 
     /**+

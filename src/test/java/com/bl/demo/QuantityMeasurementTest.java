@@ -125,7 +125,7 @@ public class QuantityMeasurementTest {
 
     //TC-1.12
     @Test
-    public void givenFeetAndInch_WhenOneFeetCompareWithTwelveInch_ShouldReturnTrue() {
+    public void givenFeetAndInch_When1FeetCompareWith12Inch_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),12);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -146,7 +146,7 @@ public class QuantityMeasurementTest {
 
     //TC-1.13
     @Test
-    public void givenFeetAndYard_WhenThreeFeetCompareWithOneYard_ShouldReturnTrue() {
+    public void givenFeetAndYard_When3FeetCompareWith1Yard_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),3);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -173,7 +173,7 @@ public class QuantityMeasurementTest {
 
     //TC-1.16
     @Test
-    public void givenYardAndInch_WhenOneYardCompareWithThirtySixInch_ShouldReturnTrue() {
+    public void givenYardAndInch_When1YardCompareWith36Inch_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),36);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -182,7 +182,7 @@ public class QuantityMeasurementTest {
 
     //TC-1.17
     @Test
-    public void givenYardAndFeet_WhenOneYardCompareWithThreeFeet_ShouldReturnTrue() {
+    public void givenYardAndFeet_When1YardCompareWith3Feet_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),3);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Yard.getUnit(),1);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -191,7 +191,7 @@ public class QuantityMeasurementTest {
 
     //UC-3
     @Test
-    public void givenInchAndCM_WhenTwoInchCompareWithFiveCM_ShouldReturnTrue() {
+    public void givenInchAndCM_When2InchCompareWith5CM_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Centimeter.getUnit(),5);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -200,7 +200,7 @@ public class QuantityMeasurementTest {
 
     //UC-4
     @Test
-    public void givenConversionTest_WhenTwoInchAndTwoInchAdditionCompareWithFourInch_ShouldReturnTrue() {
+    public void givenConversionTest_When2InchAnd2InchAdditionCompareWith4Inch_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
         QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),4);
@@ -211,7 +211,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenConversionTest_WhenOneFeetAndTwoInchAdditionCompareWithFourteenInch_ShouldReturnTrue() {
+    public void givenConversionTest_When1FeetAnd2InchAdditionCompareWith14Inch_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Inch.getUnit(),1);
         QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),13);
@@ -222,7 +222,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenConversionTest_WhenOneFeetAndOneFeetAdditionCompareWithTwentyFourInch_ShouldReturnTrue() {
+    public void givenConversionTest_When1FeetAnd1FeetAdditionCompareWith24Inch_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Feet.getUnit(),1);
         QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),24);
@@ -233,7 +233,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenConversionTest_WhenTwoInchAndTwoPointFiveCMAdditionCompareWithThreeInch_ShouldReturnTrue() {
+    public void givenConversionTest_When2InchAnd2Point5CMAdditionCompareWith3Inch_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Inch.getUnit(),2);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Centimeter.getUnit(),2.5);
         QuantityUnits unit3 = new QuantityUnits(UnitConversion.Inch.getUnit(),3);
@@ -245,7 +245,7 @@ public class QuantityMeasurementTest {
 
     //UC-5
     @Test
-    public void givenGallonAndLitre_WhenOneGallonCompareWithThreePointSeventyEightLiter_ShouldReturnTrue() {
+    public void givenGallonAndLitre_When1GallonCompareWith3Point78Liter_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Gallon.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Litre.getUnit(),3.78);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -253,7 +253,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenLitreAndML_WhenOneLitreCompareWithThousandML_ShouldReturnTrue() {
+    public void givenLitreAndML_When1LitreCompareWith1000ML_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Litre.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Millilitre.getUnit(),1000);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -262,7 +262,7 @@ public class QuantityMeasurementTest {
 
     //UC-6
     @Test
-    public void givenConversionTest_WhenOneGallonAndThreePointSeventyEightLiterAdditionCompareWithSevenPointFiftySix_ShouldReturnTrue() {
+    public void givenConversionTest_When1GallonAnd3Point78LiterAdditionCompareWith7Point56_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Gallon.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Litre.getUnit(),3.78);
         QuantityUnits unit3 = new QuantityUnits(UnitConversion.Litre.getUnit(),7.56);
@@ -273,7 +273,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenConversionTest_WhenOneLitreAndThousandMLAdditionCompareWithTwoML_ShouldReturnTrue() {
+    public void givenConversionTest_When1LitreAnd1000MLAdditionCompareWith2ML_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Litre.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Millilitre.getUnit(),1000);
         QuantityUnits unit3 = new QuantityUnits(UnitConversion.Litre.getUnit(),2);
@@ -285,7 +285,7 @@ public class QuantityMeasurementTest {
 
     //UC-7
     @Test
-    public void givenKGAndGM_WhenOneKGCompareWithOneGM_ShouldReturnTrue() {
+    public void givenKGAndGM_When1KGCompareWith1GM_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Kilogram.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Gram.getUnit(),1000);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -293,7 +293,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenTonneAndKG_WhenOneTonneCompareWithThousandKG_ShouldReturnTrue() {
+    public void givenTonneAndKG_When1TonneCompareWith1000KG_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Tonne.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Kilogram.getUnit(),1000);
         QuantityMeasurement quantity = new QuantityMeasurement();
@@ -301,7 +301,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenConversionTest_WhenOneTonneAndThousandGMAdditionCompareWithOneThousandOneKG_ShouldReturnTrue() {
+    public void givenConversionTest_When1TonneAnd1000GMAdditionCompareWith1001KG_ShouldReturnTrue() {
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Tonne.getUnit(),1);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Gram.getUnit(),1000);
         QuantityUnits unit3 = new QuantityUnits(UnitConversion.Kilogram.getUnit(),1001);
@@ -313,8 +313,8 @@ public class QuantityMeasurementTest {
 
     //UC-8
     @Test
-    public void givenFahrenheitAndCelsius_WhenTwoHundredFahrenheitCompareWithHundredCelsius_ShouldReturnTrue() {
-        double temperature = QuantityMeasurement.temperatureConversion(100);
+    public void givenFahrenheitAndCelsius_When212FahrenheitCompareWith100Celsius_ShouldReturnTrue() {
+        double temperature = QuantityMeasurement.temperatureConversion(UnitConversion.Fahrenheit.getUnit(),100);
         QuantityUnits unit1 = new QuantityUnits(UnitConversion.Celsius.getUnit(),temperature);
         QuantityUnits unit2 = new QuantityUnits(UnitConversion.Fahrenheit.getUnit(), 212);
         QuantityMeasurement quantity = new QuantityMeasurement();
