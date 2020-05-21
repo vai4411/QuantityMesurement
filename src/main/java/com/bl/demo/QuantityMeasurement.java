@@ -20,21 +20,9 @@ public class QuantityMeasurement {
         return unit1.addQuantity(unit2);
     }
 
-    public static double temperatureConversion(double QuantityUnit, double temperature) {
-        if (QuantityUnit == UnitConversion.Fahrenheit.getUnit())
+    public static double temperatureConversion(UnitConversion unitConversion, double temperature) {
+        if (unitConversion == UnitConversion.Fahrenheit)
             return (temperature * 9/5) + 32;
-        return (temperature - 32) * 5/9;
-    }
-
-    /**+
-     * @purpose : To take two objects and compare that object
-     * @param : qualityOne
-     * @param : qualityTwo
-     * @return : Give result in true or false format
-     */
-    public static boolean equals(QuantityUnits qualityOne, QuantityUnits qualityTwo) {
-        if (qualityOne == null || qualityTwo == null)
-            return false;
-        return qualityOne.equals(qualityTwo);
+        return temperature;
     }
 }
